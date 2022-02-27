@@ -1,14 +1,20 @@
 (ns app.core
   "This namespace contains your application and is the entrypoint for 'yarn start'."
   (:require [reagent.core :as r]
-            [app.hello :refer [hello]]))
+            [patu.core :as p]
+            [patu.events :as evt]
+            [app.hello :refer [hello]]
+            [app.examples.mario.core :refer [app]]
+            [app.examples.core :as example]))
 
-(defn ^:dev/after-load render
-  "Render the toplevel component for this app."
-  []
-  (r/render [hello] (.getElementById js/document "app")))
+(comment)
+
+
+(defn ^:dev/after-load start []
+  "Run app"
+  (app))
 
 (defn ^:export main
-  "Run application startup logic."
+  "Run game startup logic."
   []
-  (render))
+  (start))
