@@ -1,4 +1,4 @@
-(ns patu.examples.level.assets)
+(ns app.examples.level.assets)
 
 ;;
 (def main-map ["                         "

@@ -1,4 +1,4 @@
-(ns patu.examples.patuv06.flappy)
+(ns app.examples.patuv06.flappy)
   ; (:require ["kaboom/dist/kaboom.cjs" :as  kab]))
 
 (comment)

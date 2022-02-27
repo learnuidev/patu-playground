@@ -1,4 +1,4 @@
-(ns patu.examples.rpg.events
+(ns app.examples.rpg.events
   (:require
    [patu.utils :refer [js-get js-set!]]
    [patu.core :as p]

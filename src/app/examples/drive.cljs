@@ -1,4 +1,4 @@
-(ns patu.examples.drive
+(ns app.examples.drive
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===

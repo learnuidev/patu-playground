@@ -1,4 +1,4 @@
-(ns patu.examples.metro.core
+(ns app.examples.metro.core
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -12,12 +12,12 @@
    [patu.events :refer [dispatch reg-event key-down?]]
    ;; ======= Game =======
    ;; 1. Assets
-   [patu.examples.metro.assets :refer [main-map level-handler level-two-handler]]
+   [app.examples.metro.assets :refer [main-map level-handler level-two-handler]]
    ;; 2. Events
-   [patu.examples.metro.events]
+   [app.examples.metro.events]
    ;; 3. Scenes
-   [patu.examples.metro.scenes.one :as one]
-   [patu.examples.metro.scenes.two :as two]))
+   [app.examples.metro.scenes.one :as one]
+   [app.examples.metro.scenes.two :as two]))
 
 (comment
   (js/console.clear)

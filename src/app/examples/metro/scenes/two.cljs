@@ -1,4 +1,4 @@
-(ns patu.examples.metro.scenes.two
+(ns app.examples.metro.scenes.two
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -11,7 +11,7 @@
    ;; Event System
    [patu.events :refer [dispatch reg-event]]
    ;; Assets
-   [patu.examples.metro.assets :refer [main-map level-handler level-two-handler]]))
+   [app.examples.metro.assets :refer [main-map level-handler level-two-handler]]))
 
 ;;
 (defn init  [score]

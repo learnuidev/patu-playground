@@ -1,4 +1,4 @@
-(ns patu.examples.contra.core
+(ns app.examples.contra.core
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -12,12 +12,12 @@
    [patu.events :refer [dispatch reg-event key-down?]]
    ;; ======= Game =======
    ;; 1. Assets
-   [patu.examples.contra.assets :refer [main-map level-handler level-two-handler]]
+   [app.examples.contra.assets :refer [main-map level-handler level-two-handler]]
    ;; 2. Events
-   [patu.examples.contra.events]
+   [app.examples.contra.events]
    ;; 3. Scenes
-   [patu.examples.contra.scenes.one :as one]
-   [patu.examples.contra.scenes.two :as two]))
+   [app.examples.contra.scenes.one :as one]
+   [app.examples.contra.scenes.two :as two]))
 
 (comment
   (js/console.clear)

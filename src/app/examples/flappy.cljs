@@ -1,4 +1,4 @@
-(ns patu.examples.flappy
+(ns app.examples.flappy
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs (5) ===

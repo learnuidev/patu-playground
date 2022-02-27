@@ -1,4 +1,4 @@
-(ns patu.examples.aladdin
+(ns app.examples.aladdin
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs (5) ===

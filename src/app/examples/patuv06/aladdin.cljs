@@ -1,4 +1,4 @@
-(ns patu.examples.patuv06.aladdin)
+(ns app.examples.patuv06.aladdin)
 
 ;; 1. State
 (def state (atom {:components {}}))

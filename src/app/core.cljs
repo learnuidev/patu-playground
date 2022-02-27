@@ -1,9 +1,6 @@
 (ns app.core
   "This namespace contains your application and is the entrypoint for 'yarn start'."
   (:require [reagent.core :as r]
-            [patu.core :as p]
-            [patu.events :as evt]
-            [app.hello :refer [hello]]
             ;; Examples
             [app.examples.mario.core :refer [app]]
             #_[app.examples.level.core :refer [app]]
@@ -17,8 +14,6 @@
             #_[app.examples.aladdin :refer [app]]
             #_[app.examples.patuv06.text :refer [app]]
             #_[app.examples.parallax :refer [app]]))
-
-(comment)
 
 
 (defn ^:dev/after-load start []

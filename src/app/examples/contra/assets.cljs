@@ -1,4 +1,4 @@
-(ns patu.examples.contra.assets
+(ns app.examples.contra.assets
   (:require [patu.core :as p]))
 
 (def main-map ["e=                    "

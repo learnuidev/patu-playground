@@ -1,1 +1,1 @@
-(ns patu.examples.space-shooter)
+(ns app.examples.space-shooter)

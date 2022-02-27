@@ -1,4 +1,4 @@
-(ns patu.examples.rpg.core
+(ns app.examples.rpg.core
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -12,7 +12,7 @@
    ;; Event handler namespace
    ; #_[app.kaboom-examples.rpg.events]
    ;; Assets
-   [patu.examples.rpg.assets :refer [main-map level-handler]]))
+   [app.examples.rpg.assets :refer [main-map level-handler]]))
 
 (comment
   (js/console.clear)

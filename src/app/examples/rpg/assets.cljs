@@ -1,4 +1,4 @@
-(ns patu.examples.rpg.assets
+(ns app.examples.rpg.assets
   (:require [patu.core :as p]))
 
 (def main-map ["+++++++|++"

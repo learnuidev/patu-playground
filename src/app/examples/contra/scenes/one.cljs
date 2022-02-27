@@ -1,4 +1,4 @@
-(ns patu.examples.contra.scenes.one
+(ns app.examples.contra.scenes.one
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -11,7 +11,7 @@
    ;; Event System
    [patu.events :refer [dispatch reg-event key-down?]]
    ;; Assets
-   [patu.examples.metro.assets :refer [main-map level-handler level-two-handler]]))
+   [app.examples.metro.assets :refer [main-map level-handler level-two-handler]]))
 
 (defn sleep [f ms]
   (js/setTimeout f ms))

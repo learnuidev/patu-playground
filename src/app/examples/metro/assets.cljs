@@ -1,4 +1,4 @@
-(ns patu.examples.metro.assets
+(ns app.examples.metro.assets
   (:require [patu.core :as p]))
 
 (def main-map ["e=                    "

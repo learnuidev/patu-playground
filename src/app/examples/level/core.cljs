@@ -1,4 +1,4 @@
-(ns patu.examples.level.core
+(ns app.examples.level.core
   (:require
    [clojure.repl :refer [doc]]
    ;; Main Libs ===
@@ -12,9 +12,9 @@
    ;; Plugins ===
    [patu.plugins :refer [aseprite-plugin]]
    ;; Event handler namespace
-   [patu.examples.level.events]
+   [app.examples.level.events]
    ;; Assets
-   [patu.examples.level.assets :refer [main-map level-handler]]))
+   [app.examples.level.assets :refer [main-map level-handler]]))
 
 (comment
   (js/console.clear)

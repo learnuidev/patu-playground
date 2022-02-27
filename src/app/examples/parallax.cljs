@@ -1,4 +1,4 @@
-(ns patu.examples.parallax
+(ns app.examples.parallax
   (:require [patu.core :as p]
             [patu.events :refer [dispatch reg-event dispatch-n]]))
 ;; 0 Assets

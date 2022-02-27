@@ -1,4 +1,4 @@
-(ns patu.examples.patuv06.text)
+(ns app.examples.patuv06.text)
 
 (js/kaboom (clj->js {:canvas (js/document.getElementById "app")
                      :global true}))

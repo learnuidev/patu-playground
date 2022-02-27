@@ -1,4 +1,4 @@
-(ns patu.examples.contra
+(ns app.examples.contra
   (:require [patu.core :as p]
             [patu.loaders :as l]
             [patu.events :refer [dispatch dispatch-n]]))

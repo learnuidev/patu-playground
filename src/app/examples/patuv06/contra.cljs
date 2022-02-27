@@ -1,4 +1,4 @@
-(ns patu.examples.patuv06.contra)
+(ns app.examples.patuv06.contra)
 
 ;; 1. State
 (def state (atom {:components {}}))
