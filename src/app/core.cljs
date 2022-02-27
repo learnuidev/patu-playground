@@ -1,8 +1,6 @@
 (ns app.core
   "This namespace contains your application and is the entrypoint for 'yarn start'."
-  (:require [reagent.core :as r]
-            ;; Examples
-            [app.examples.mario.core :refer [app]]
+  (:require [app.examples.mario.core :refer [app]]
             #_[app.examples.level.core :refer [app]]
             #_[app.examples.rpg.core :refer [app]]
             #_[app.examples.flappy :refer [app]]

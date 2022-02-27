@@ -32,9 +32,6 @@
     "zprint-clj": "~0.8.0"
   },
   "dependencies": {
-    "create-react-class": "~15.6.3",
-    "react": "~16.8.0",
-    "react-dom": "~16.8.0",
     "kaboom": "^0.5.1"
   }
 }
