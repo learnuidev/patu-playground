@@ -7,3 +7,6 @@ out
 yarn-error.log
 report.html
 .cpcache
+
+
+.DS_Store
