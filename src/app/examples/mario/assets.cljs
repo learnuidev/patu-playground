@@ -3,32 +3,32 @@
 ;; Assets ===
 (def assets {:root-url "https://i.imgur.com/"
              :sprites [{:title :coin
-                        :url "wbKxhcd.png"}
+                        :url "https://i.imgur.com/wbKxhcd.png"}
                        {:title :evil-mushroom
-                        :url "LmseqUG.png"}
+                        :url "https://i.imgur.com/LmseqUG.png"}
                        {:title :brick
-                        :url "pogC9x5.png"}
+                        :url "https://i.imgur.com/pogC9x5.png"}
                        ;; old
                        #_{:title :block
-                          :url "bdrLpi6.png"}
+                          :url "https://i.imgur.com/bdrLpi6.png"}
                        {:title :block
-                        :url "M6rwarW.png"}
+                        :url "https://i.imgur.com/M6rwarW.png"}
                        {:title :mario
-                        :url "Wb1qfhK.png"}
+                        :url "https://i.imgur.com/Wb1qfhK.png"}
                        {:title :mushroom
-                        :url "0wMd92p.png"}
+                        :url "https://i.imgur.com/0wMd92p.png"}
                        {:title :surprise
-                        :url "gesQ1KP.png"}
+                        :url "https://i.imgur.com/gesQ1KP.png"}
                        {:title :unboxed
-                        :url "bdrLpi6.png"}
+                        :url "https://i.imgur.com/bdrLpi6.png"}
                        {:title :pipe-top-left
-                        :url "ReTPiWY.png"}
+                        :url "https://i.imgur.com/ReTPiWY.png"}
                        {:title :pipe-top-right
-                        :url "hj2GK4n.png"}
+                        :url "https://i.imgur.com/hj2GK4n.png"}
                        {:title :pipe-bottom-left
-                        :url "c1cYSbt.png"}
+                        :url "https://i.imgur.com/c1cYSbt.png"}
                        {:title :pipe-bottom-right
-                        :url "nqQ79eI.png"}]});; === App
+                        :url "https://i.imgur.com/nqQ79eI.png"}]});; === App
 ;;
 
 ;;

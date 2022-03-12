@@ -2,9 +2,10 @@
   (:require [patu.core :as p]
             [patu.components :as c]
             [patu.loaders :as l]
+            [patu.audio :as a]
             [patu.cam :as cam]
             [patu.utils :refer [js-get]]
-            [patu.events :refer [reg-event dispatch]]
+            [patu.events :refer [reg-event dispatch dispatch-n]]
             [app.examples.mario.assets :refer [assets main-map level-handler]]))
 
 ; 1 === Init game ===
@@ -16,9 +17,33 @@
          :clearColor [0,0,0, 0.9]})
 
 ; 2 === Load Assets ===
-(l/load-root (:root-url assets))
+; (l/load-root (:root-url assets))
+
 (doseq [{:keys [title url]} (:sprites assets)]
   (l/load-sprite title url))
+
+
+;;
+(l/load-sound :sound/jump "sounds/mario_jump.mov")
+(-> (l/load-sound :sound/level1 "sounds/level1.mp3")
+    (.finally #(dispatch [:audio/play :sound/level1])))
+; (dispatch [:sound/jump "sounds/mario_jump.mp3"])
+
+(comment
+  (l/load-sound :sound/jump "sounds/mario_jump.mp3"))
+
+
+;;
+; (dispatch [:audio/play :sound/level1])
+(comment
+  (a/play :sound/jump))
+
+(comment
+ (def play-sound (dispatch [:audio/play :sound/level1]))
+ (.pause play-sound)
+ (.play play-sound)
+ (.stop play-sound)
+ (p/get-component :sound/level1))
 
 ;; 3 === Register level ===
 (p/reg-level :level/one level-handler)
@@ -61,10 +86,12 @@
   (cam/cam-pos [100 200])
   (cam/zoom-out 10)
   (cam/zoom-in 10))
+
 (defn main-init []
   [[:gravity 980]
    [:add-level main-map :level/one]
    [:layers [:background :game, :ui] :game]
+   [:audio/play :sound/level1]
    [:origin :botleft]
    [:cam/ignore [:ui]]
    [:comp/reg-n
@@ -85,8 +112,16 @@
    (let [comp (p/get-component id)]
      (.changeSprite comp (name sid)))))
 
-(defn main-action []
-  [])
+
+(reg-event
+  :player/jump
+  (fn [_ _]
+    (let [player (p/get-component :player)]
+     (dispatch [:audio/play :sound/jump])
+     (c/jump! player 400))))
+
+; (defn main-action []
+;   [])
 (defn main-action []
   (let [player (p/get-component :player)
         score (p/get-component :score)
@@ -109,7 +144,7 @@
                          (cam/cam-pos pos))]
       [:up    #(cam/zoom-in)]
       [:down  #(cam/zoom-out)]]
-     [:key-press :space #(c/jump! player 400)]
+     [:key-press :space #(dispatch [:player/jump])]
      [:collides
       [[:player :evil-mushroom]  #(p/go :scene/lose (js-get score :value))]
       [[:player :evil-mushroom]  #(dispatch [:player/change-sprite :player :sprite/evil-mushroom])]
@@ -128,6 +163,21 @@
       #_[:player #(when (< 140 (.-x (.-pos player)))
                     (let [pos (.sub (.-pos player) (p/vec2 [-200 (- (.-y (.-pos player)) 30)]))]
                       (cam/cam-pos pos)))]]]))
+
+
+;;
+(p/reg-scene :scene/start {:init (fn [score]
+                                   [[:comp/reg-n
+                                     [:dialog
+                                      [[:text "Mario CLJ" 40]
+                                       [:origin :center]
+                                       [:pos (p/center)]]]
+                                     [:dialog-2
+                                      [[:text "Press space to start" 8]
+                                       [:origin :center]
+                                       [:pos [320 280]]]]]])
+                           :evt (fn []
+                                  [[:key-press :space #(p/go :scene/main)]])})
 
 ;;
 (comment
@@ -149,5 +199,7 @@
                                  [[:key-press :space #(p/go :scene/main)]])})
 ;; 6 Start app
 (defn app []
-  (p/start :scene/main))
+  (p/start :scene/start))
+  ; (p/go :scene/main))
+  ; (p/go :scene/main))
   ; (p/go :scene/main))
